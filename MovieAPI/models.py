@@ -11,3 +11,8 @@ class Movie(BaseModel):
     title: str
     summary: str
     watched: bool
+
+
+class Login(BaseModel):
+    email: str
+    password: str

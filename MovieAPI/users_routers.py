@@ -1,7 +1,10 @@
 from fastapi import *
+
+from models import User
 from schemas import *
 from database import *
 from bson import ObjectId
+from authentication import *
 
 users_router = APIRouter()
 
@@ -24,6 +27,7 @@ async def get_user(uid: str):
 
 @users_router.post('/users', tags=['user'])
 async def create_user(user: User):
+
     _id = user_list.insert_one(dict(user))
     add_user = users_serializer(user_list.find({"_id": _id.inserted_id}))
     return {'status': 'ok', 'data': add_user}

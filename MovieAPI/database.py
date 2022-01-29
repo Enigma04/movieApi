@@ -1,5 +1,4 @@
 from pymongo import MongoClient
-from typing import Optional
 
 db_url = "mongodb+srv://Rohit:6zJeQrfOPSTNQZvX@cluster0.nlgby.mongodb.net/MyFirstDatabase?retryWrites=true&w=majority"
 client = MongoClient(db_url)

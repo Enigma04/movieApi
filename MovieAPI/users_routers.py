@@ -1,8 +1,3 @@
-from fastapi import *
-
-from models import User
-from schemas import *
-from database import *
 from bson import ObjectId
 from authentication import *
 

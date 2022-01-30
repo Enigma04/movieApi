@@ -1,4 +1,3 @@
-from pydantic import BaseModel
 
 
 def movie_serializer(movie) -> dict:

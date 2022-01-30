@@ -28,6 +28,7 @@ async def get_user(uid: str, token: str = Depends(authentication.oauth2_scheme))
 
 @users_router.post('/users', tags=['user'])
 async def create_user(user: User, token: str = Depends(authentication.oauth2_scheme)):
+    print(token)
     _id = user_list.insert_one(dict(user))
     add_user = users_serializer(user_list.find({"_id": _id.inserted_id}))
     return {'status': 'ok', 'data': add_user}
@@ -35,6 +36,7 @@ async def create_user(user: User, token: str = Depends(authentication.oauth2_sch
 
 @users_router.delete('/users/{id}', tags=['user'])
 async def delete_user(uid: str, token: str = Depends(authentication.oauth2_scheme)):
+    print(token)
     user = user_list.find_one_and_delete({"_id": ObjectId(uid)})
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'No user found')

@@ -4,6 +4,7 @@ from models import *
 from database import *
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 
+
 authentication = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')
 

@@ -5,6 +5,3 @@ client = MongoClient(db_url)
 db = client.test
 movie_list = db['movie_list']
 user_list = db['users_list']
-
-
-

@@ -1,5 +1,3 @@
-
-
 def movie_serializer(movie) -> dict:
     return {
         'id': str(movie['_id']),
@@ -28,4 +26,3 @@ def users_serializer(users) -> list:
     return [
         user_serializer(user) for user in users
     ]
-
